@@ -21,7 +21,7 @@ const reviewRouter  = require("./routes/review.js");
 const userRouter  = require("./routes/user.js");
 // const { maxHeaderSize } = require("http");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderLust";
+const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/wanderLust";
 
 main()
     .then(() => {
