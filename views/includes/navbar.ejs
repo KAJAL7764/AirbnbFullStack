@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i></a>
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -11,14 +11,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/listings">All Listings</a>
-        <a class="nav-link" href="/listings/new">Add new listings</a>
+       
+        <a class="nav-link" href="/listings">Explore</a>
+        
       </div>
       <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Add new listings</a>
         <% if(!currUser) { %>
-        <a class="nav-link" href="/signup">Sign Up</a>
-        <a class="nav-link" href="/login">Log In</a>
+        <a class="nav-link" href="/signup"> <b>Sign Up</b></a>
+        <a class="nav-link" href="/login"> <b>Log In</b></a>
         <% } %>
          <% if(currUser) { %>
         <a class="nav-link" href="/logout">Log out</a>
@@ -27,3 +28,29 @@
     </div>
   </div>
 </nav>
+
+<div class="search-container">
+    <div class="search-bar">
+      <form action="/search" method="get" class="search-form">
+        <div class="search-item">
+          <label for="destination">Where</label>
+          <input type="text" id="destination" placeholder="Search destinations" />
+        </div>
+        <div class="search-item">
+          <label for="checkin">Check in</label>
+          <input type="text" id="checkin" placeholder="Add dates" />
+        </div>
+        <div class="search-item">
+          <label for="checkout">Check out</label>
+          <input type="text" id="checkout" placeholder="Add dates" />
+        </div>
+        <div class="search-item">
+          <label for="guests">Who</label>
+          <input type="text" id="guests" placeholder="Add guests" />
+        </div>
+        <button type="submit" class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
